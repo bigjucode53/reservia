@@ -1,0 +1,964 @@
+*{
+    margin: 0;
+    padding:0;/*css reset coherence entre les navigateurs technique qui marche bien apparemment*/
+}
+
+
+
+.conteneur{
+    font-family: 'Raleway', sans-serif;
+    width: 1400px;/*largeur de la boite du contenu*/
+    padding-left: 15px;/*espace à la gauche de l'element*/
+    padding-right: 15px;/*espace à la droite de l'element*/
+    margin-left: auto;/*espacee horizontale à gauche qui forme la marge *//*auto s adapte à l espace restant)*/
+    margin-right: auto;/*espace qui forme la marge droite*/
+    height: auto;/*hauteur de la boite de contenu / La boîte de contenu est à l'intérieur de la boîte de remplissage (padding) qui est à l'intérieur de la boîte de bordure qui est elle-même à l'intérieur de la boîte de marge de l'élément. Si la propriété box-sizing vaut border-box, cette propriété détermine la hauteur de la boîte de marge.*/
+    display: grid;/*emodele de disposition en grille /css grid/ */
+
+    grid-template-columns: 67% 33%;   /*définit les noms des lignes et les fonctions de taille (track sizing) pour les colonnes de la grille.sens vertical*/  
+    grid-template-rows: repeat(5,0.1fr);/*définit les noms des lignes et les fonctions de taille (track sizing) pour les colonnes de la grille.sens horizontal*/  
+    grid-template-areas: /*permet de définir des zones de grille nommées.*/  
+            "nav nav"
+            "header header"
+            "hébergements aside"
+            "activités activités"
+            "footer footer";
+    grid-gap: 0.5rem;    /*qui permet de définir les espaces entre les lignes et entre les colonnes d'une grille.*/      
+}
+
+
+
+
+nav{
+    grid-area: nav;  /*nom de la div en grid .*/  
+    height: 10vh;   /*hauteur de la boite de contenu .*/
+    margin: 10px 0 0 0;   /* définit la taille des marges sur les quatre côtés de l'élément*/
+}
+
+
+.logo{
+    float: left;/*placé à gauche du conteneur .*/ 
+    width: 50px;/*largeur de la boite du contenu*/
+    
+}
+
+
+.nav-bar{
+    display: flex;/*display inside , affichage interieur de l element */
+    flex-direction: row;/*dispo en ligne*/
+    justify-content: flex-end;/* Éléments flexibles groupés à la fin */
+    
+}
+
+
+.nav-bar ul{
+    display: flex;/*display inside , affichage interieur de l element */
+    flex-direction: row;/*dispo en ligne*/
+    flex-wrap: wrap;/*Les éléments flexibles sont disposé sur plusieurs lignes. La ligne cross-start est équivalente à  start ou before en fonction de la valeur de flex-direction et la ligne cross-end est à l'opposée cross-start.*/
+    grid-row-gap: 50px;/*taille des gouttieres*/
+    
+    
+}
+
+
+.nav-bar ul li{
+    
+
+    list-style-type: none;/*retire les puces*/
+    padding: 10px;/*ecart de remplissage sur les 4 cotés/raccourci de tous les paddings */
+    margin: 5px;/*taille des marges des 4 cotes reunis tous les margin */
+    font-size: 14px;/*taille de fonte*/
+}
+
+
+.sinscrire a
+{
+    color:#1E90FF;/*couleur */
+    font-weight: bold;/*texte en gras */
+}
+
+
+.sinscrire2{
+    display: none;/*ne genere pas de boite*/
+}
+
+
+a{
+    text-decoration: none;/*pas de surlignement*/
+    color: inherit;/*couleur en noir*/
+}
+
+
+.description{
+    display: flex;/*display inside , affichage interieur de l element */
+    flex-direction:column;/*dispo en colonne*/
+    height: content-box;/* Les dimensions de l'élément sont donc calculées à partir de la hauteur et de la largeur du contenu (on ne tient pas compte de la bordure ou du remplissage (padding))*/
+    line-height: 1.3;/*La propriété line-height définit la hauteur de la boîte d'une ligne.*/
+    margin-bottom: 22px;/*marge basse*/
+}
+
+.desc_2{
+    margin-top:5px;/*marge haute*/
+    font-weight: 100;/*texte en gras */
+    font-size: 15px;/*taille de fonte*/
+}
+.desc_1{
+    font-weight:bold;/*texte en gras */
+    font-size: large;/*taille de fonte*/
+    }
+.recherche{
+    width: auto;/*largeur de la boite ,auto navigateur calcule la largeur de l element*/
+    height: 40px;/*hauteur de la boite de contenu */
+    display:flex;/*display inside , affichage interieur de l element */
+    flex-direction: row;/*dispo en ligne*/
+    border: none;/*pas de bordure*/
+}    
+.recherche-btn1{
+    background-color:  #0065FC;/*couleur du fond d ecran bouton bleu*/
+    color: white;/*couleur blanc*/
+    outline: none;/*le contour*/
+    font-size: 15px;/*taille de la fonte*/
+    padding: 10px;/*ecart de remplissage sur les 4 cotes de l element*/
+    border-top-right-radius: 10px;/*coin arrondi haut droit*/
+    border-bottom-right-radius: 10px;/*coin arrondi bas droit*/
+    margin: 0 0 0 -10px;/*taille des marges sur les 4 cotes de l element*/
+    border:none;/*pas de bordure*/
+} 
+.recherche i{
+    display: none;/*ne genere pas de boite*/
+}
+.entree{
+    width: 200px;/*largeur de la boite */
+    outline:none;/*le contour*/
+    font-size: 15px;/*taille de la fonte*/
+    padding:10px;/*ecart de remplissage sur les 4 cotes de l element*/
+    border:#ececec solid 1px;/*bordure en solide*/
+    color: black;/*en noir*/
+    
+}
+.recherche img{
+    
+    width: 27px;/*largeur de la boite */
+    background-color:#ececec;/*couleur du fond d ecran bouton gris clair*/
+    border-top-left-radius: 10px;/*coin arrondi haut gauche*/
+    border-bottom-left-radius: 10px;/*coin arrondi bas gauche*/
+    border:none;/*pas de bordure*/
+    padding: 11px;/*ecart de remplissage sur les 4 cotes de l element*/
+     object-fit:cover;
+    object-position: center; 
+}
+.Barredefiltre{
+    display: inline-flex;/*affichage en ligne*/
+    flex-direction: row;/*direction en ligne*/
+    flex-wrap: wrap;/*Les éléments flexibles sont disposé sur plusieurs lignes. La ligne cross-start est équivalente à  start ou before en fonction de la valeur de flex-direction et la ligne cross-end est à l'opposée cross-start.
+*/
+    margin: 25px 0 20px 0;/*taille des marges sur les 4 cotes de l element*/
+    grid-row-gap:10px;/*taille des gouttieres*/
+    
+    
+}
+.filtre{
+    display: inline-block;/*affichage en bloc*/
+  
+    margin: auto 10px;/*taille des marges sur les 4 cotes de l element*/
+}
+
+.etiquette{
+        display:flex;/*display inside , affichage interieur de l element */
+        flex-direction: row;/*direction en ligne*/
+        border: 1px solid #ddd;/*bordure en solide*/
+        border-radius: 40px;/*coins arrondis*/
+        height: 40px;/*hauteur de la boite de contenu .*/
+        line-height: 40px;/*La propriété line-height définit la hauteur de la boîte d'une ligne.*/
+        
+}
+.icone-etiquette {
+    text-align: center;/*Les contenus en ligne (inline) sont horizontalement centrés par rapport à la boîte contenant la ligne.*/
+    border-radius: 40px;/*coins arrondis*/
+    width: 40px;/*largeur de la boite */
+    display: inline-block;/*affichage en bloc*/
+    background-color:#DEEBFF;/*couleur du fond d ecran */
+    color: #0065FC;/*couleur */
+
+}
+.contenu-etiquette {
+    
+    padding: 0 10px;/*ecart de remplissage sur les 4 cotes de l element*/
+    color:black;/*couleur */
+    font-size: large;/*taille de la fonte*/
+    font-weight: bold;/*ecris en gras*/
+    
+  }
+  .info{
+      
+      display: flex;/*display inside , affichage interieur de l element */
+      align-items: center;/*Les éléments sont centrés sur l'axe en bloc du conteneur.*/
+      
+  }
+.info-icone{
+    background-color:white;/*couleur du fond d ecran */
+    color: #0065FC;/*couleur */
+    border: #DEEBFF solid 2px;/*bordure en solide*/
+    height: 20px;/*hauteur de la boite de contenu .*/
+    width: 20px;/*largeur de la boite */
+    display: inline-block;/*affichage en bloc*/
+    text-align: center;/*Les contenus en ligne (inline) sont horizontalement centrés par rapport à la boîte contenant la ligne.*/
+    border-radius: 20px;/*coins arrondis*/
+    padding: 5px;/*ecart de remplissage sur les 4 cotes de l element*/
+    
+}  
+.info-contenu{
+    display:inline-block;/*affichage en bloc*/
+    width: content-box;/*largeur de la boite */
+    margin: auto;/* définit la taille des marges sur les quatre côtés de l'élément*/
+    margin: 10px;/* définit la taille des marges sur les quatre côtés de l'élément*/
+}
+.hébergements{
+    width: 97%;/*largeur de la boite */
+    background-color: 	#ececec;/*couleur du fond d ecran */
+    height:100vh;/*hauteur de la boite de contenu .*/
+    border-radius: 20px;/*coins arrondis*/
+    grid-area:hébergements;/*nom de la div en grid .*/ 
+}
+.section-titre{
+    display:inline-block;/*affichage en bloc*/
+    margin: 30px 0 5px 30px;/* définit la taille des marges sur les quatre côtés de l'élément*/
+    font-weight: 700;/*ecris en gras*/
+}
+aside{
+    background-color: 	#ececec;/*couleur du fond d ecran */
+    width: 100%;/*largeur de la boite */
+    height:100vh;/*hauteur de la boite de contenu .*/
+    border-radius: 20px;/*coins arrondis*/
+    display: flex;/*display inside , affichage interieur de l element */
+    flex-direction: column;
+    grid-area: aside;/*nom de la div en grid .*/ 
+}
+
+.activités{
+    background-color:white;/*couleur du fond d ecran */
+    width: 100%;/*largeur de la boite */
+    height:76vh;/*hauteur de la boite de contenu .*/
+    border-radius: 20px;/*coins arrondis*/
+    grid-area:activités;/*nom de la div en grid .*/ carte 
+}
+footer{
+    background-color: #ECECEC; /*couleur du fond d ecran */
+    width: 100%;/*largeur de la boite */
+    height: content-box;/*hauteur de la boite de contenu .*/
+    grid-area: footer;/*nom de la div en grid .*/ 
+    display: flex;/*display inside , affichage interieur de l element */
+    flex-direction: row;/*direction en ligne*/
+    margin-bottom: 0px;/*La propriété margin-bottom définit la marge basse */
+    margin-left: -26px;/*La propriété margin-left définit la marge gauche */
+}
+header{
+    grid-area: header;/*nom de la div en grid .*/ 
+    display: flex;/*display inside , affichage interieur de l element */
+    flex-direction: column;/*direction en colonne*/
+    
+}
+.carte{
+    width: 30%;/*largeur de la boite */
+    background-color: white;/*couleur du fond d ecran */
+    border-radius: 20px;/*coins arrondis*/
+    margin: 10px 0px;/* définit la taille des marges sur les quatre côtés de l'élément*/
+    box-shadow: 0 0px 0px 0 rgba(0,0,0,0.2), 0 3px 12px 0 rgba(0,0,0,0.19);
+    height: 200px;/*hauteur de la boite de contenu .*/
+    
+}
+.carte img{
+    width: 97%;/*largeur de la boite */
+    height: 50%;/*hauteur de la boite de contenu .*/
+    border-top-left-radius: 20px;/*arrondi haut gauche*/
+    border-top-right-radius: 20px;/*arrondi haut droit*/
+    display:block;/*display inside , affichage interieur de l element en bloc */
+    margin: auto;/* définit la taille des marges sur les quatre côtés de l'élément*/
+    padding-top: 3px;/*La propriété padding-top d'un élément ajuste la hauteur de la boîte de remplissage (padding) en haut de l'élément.*/
+     object-fit:cover;
+    object-position: center; 
+}
+.carte-hébergement{
+    padding: 10px 16px;/*ecart de remplissage sur les 4 cotes de l element*/
+    display: flex;/*display inside , affichage interieur de l element */
+    flex-direction: column;/*direction en colonne*/
+    justify-content: space-around;
+    height: 5em;/*hauteur de la boite de contenu .*/
+}
+.aside-description{
+    display: flex;/*display inside , affichage interieur de l element */
+    flex-direction: column;/*direction en colonne*/
+    padding: 5px 13px;/*ecart de remplissage sur les 4 cotes de l element*/
+    justify-content: space-between;/* Les éléments sont répartis équitablement
+                                   Le bord du premier est aligné sur le 
+                                   début du conteneur et la fin du dernier
+                                   est alignée sur la fin du conteneur */
+
+}
+
+.stars{
+    display: flex;/*display inside , affichage interieur de l element */
+    flex-direction: row;/*direction en ligne*/
+}
+.cartes{
+    margin: 20px 30px 20px 30px;
+    display: flex;/*display inside , affichage interieur de l element */
+    flex-direction: row;/*direction en ligne*/
+    flex-wrap: wrap;/*Les éléments flexibles sont disposé sur plusieurs lignes. La ligne cross-start est équivalente à  start ou before en fonction de la valeur de flex-direction et la ligne cross-end est à l'opposée cross-start.
+*/
+    grid-row-gap: 20px;
+    justify-content: space-between;/* Éléments espacés */
+}
+.Afficherplus{
+    
+    margin: 25px 10px 30px 25px;/* définit la taille des marges sur les quatre côtés de l'élément*/
+
+}
+.cartes-aside{
+    display: flex;/*display inside , affichage interieur de l element */
+    flex-direction: column;/*direction en colonne*/
+    justify-content: center;/* Éléments groupés au centre */
+}
+.carte-aside{
+    width: 80%;/*largeur de la boite */
+    height: 140px;/*hauteur de la boite de contenu .*/
+    background-color: white;/*couleur du fond d ecran */
+    border-radius: 20px;/*coins arrondis*/
+    margin: 10px 25px 10px 35px;/* définit la taille des marges sur les quatre côtés de l'élément*/
+    display:flex;/*display inside , affichage interieur de l element */
+    flex-direction: row;/*direction en ligne*/
+    box-shadow: 0 0px 0px 0 rgba(0,0,0,0.2), 0 3px 12px 0 rgba(0,0,0,0.19);/*ombre sur la boite*/
+    border:white solid 3px;/*bordure en solide*/
+    
+}
+.carte-aside img{
+    width: 40%;/*largeur de la boite */
+    height: 100%;/*hauteur de la boite de contenu .*/
+    border-top-left-radius: 20px;/*coins arrondis en haut a gauche*/
+    border-bottom-left-radius: 20px;/*coins arrondis en bas a gauche */
+     object-fit:cover;
+    object-position: center; 
+}
+
+.cartes-activités{
+    display: grid;/*placement en grid*/
+    grid-template-columns:repeat(4,25%);/*Représente un fragment répété d'une liste de pistes, cela permet de gérer des grilles avec de nombreuses colonnes pour lesquelles on réutilise un motif.*/
+    grid-template-rows:1fr 1fr;/*La propriété grid-template-rows définit les noms des lignes et les fonctions de taille (track sizing) pour les lignes de la grille.*/
+    height: 65vh;/*hauteur de la boite de contenu .*/
+    grid-template-areas: /*permet de définir des zones de grille nommées.*/
+    "item1 item2 item4 item5"
+    "item1 item3 item4 item6";
+   }
+
+  
+    
+    
+.carte-activités{
+    height: 60vh;/*hauteur de la boite de contenu .*/
+    background-color: white;/*couleur du fond d ecran */
+    margin: 0px 20px;/* définit la taille des marges sur les quatre côtés de l'élément*/
+    border-radius: 20px;/*coins arrondis*/
+    box-shadow: 0 0px 0px 0 rgba(0,0,0,0.2), 0 3px 12px 0 rgba(0,0,0,0.19);/*ombre sur la boite*/
+}
+.carte-activités a img{
+    width: 100%;/*largeur de la boite */
+    height: 85%;/*hauteur de la boite de contenu .*/
+    border-top-right-radius: 20px;/*coins arrondis haut droite*/
+    border-top-left-radius: 20px;/*coins arrondishaut gauche*/
+     object-fit:cover;
+    object-position: end;
+
+
+    
+}
+.hebergement_titre{
+    margin: 18px 0px 0px 30px;/* définit la taille des marges sur les quatre côtés de l'élément*/
+ }
+.carte-3v2{
+    height: 27.5vh;/*hauteur de la boite de contenu .*/
+    background-color: white;/*couleur du fond d ecran */
+    margin: 0px 20px;/* définit la taille des marges sur les quatre côtés de l'élément*/
+    border-radius: 20px;/*coins arrondis*/
+    box-shadow: 0 0px 0px 0 rgba(0,0,0,0.2), 0 3px 12px 0 rgba(0,0,0,0.19);
+}
+.carte-3v2 img{
+    width: 100%;/*largeur de la boite */
+    height: 75%;/*hauteur de la boite de contenu .*/
+    border-top-right-radius: 20px;/*coins arrondis haut droit*/
+    border-top-left-radius: 20px;/*coins arrondis haut gauche*/
+    object-fit:cover;
+    object-position: center; 
+
+}
+.activités-description{
+    padding: 10px 16px;/*ecart de remplissage sur les 4 cotes de l element*/
+
+}
+.contenu-footer{
+    
+    width: 30%;/*largeur de la boite */
+    margin: 30px;/* définit la taille des marges sur les quatre côtés de l'élément*/
+}
+.item1{
+    grid-area: item1;
+}
+.item2{
+    grid-area: item2;
+}
+.item3{
+    grid-area: item3;
+}
+.item4{
+    grid-area: item4;
+}
+.item5{
+    grid-area: item5;
+}
+.item6{
+    grid-area: item6;
+}
+.contenu-footer{
+    line-height: 2/*La propriété line-height définit la hauteur de la boîte d'une ligne.*/
+}
+.checked{
+    color: cornflowerblue;/*couleur */
+}
+.section-titre-3{
+    margin: 15px 0 22px 20px;/* définit la taille des marges sur les quatre côtés de l'élément*/
+    font-weight: 700;/*ecris en gras*/
+}
+.btn-filtre{
+    border: 1px solid #ddd;/*bordure en solide*/
+    border-radius: 40px;/*coins arrondis*/
+    outline: none;/*le contour*/
+    background-color: white;/*couleur du fond d ecran */
+    margin: 0 12px;/* définit la taille des marges sur les quatre côtés de l'élément*/
+}
+.hébergements-btn {
+    border-top-color: #1E90FF;/*La propriété border-top-color définit la couleur utilisée pour la bordure haute d'un élément.*/
+    border-top-style: solid;/*bordure en solide .*/
+    padding-top: 20px;/*La propriété padding-top d'un élément ajuste la hauteur de la boîte de remplissage (padding) en haut de l'élément.*/
+    border-top-width: 2px;/*epaisseur de la bordure.*/
+}
+.btn-filtre:hover{
+    background-color: rgb(140, 187, 224);/*couleur du fond d ecran */
+    }
+.carte:hover{
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);/*ombre sur la boite.*/
+}
+.carte-activités:hover{
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);/*ombre sur la boite.*/
+}
+.carte-3v2:hover{
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);/*ombre sur la boite.*/
+}
+.titre-aside{
+    display: flex;/*display inside , affichage interieur de l element */
+    flex-direction: row;/*direction en ligne*/
+    align-items:baseline;/*Tous les éléments flexibles sont alignés afin que leurs différentes lignes de base soient alignées*/
+    justify-content:space-between;
+    width: 85%;/*largeur de la boite */
+    font-weight: 700;/*ecris en gras*/
+}
+.carte-aside:hover{/*quand je passe sur la carte avec la souris*/
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);/*ombre sur la boite*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*responsive *//*responsive *//*responsive *//*responsive *//*responsive *//*responsive *//*responsive *//*responsive *//*responsive *//*responsive *//*responsive *//*responsive *//*responsive *//*responsive *//*responsive *//*responsive *//*responsive *//*responsive *//*responsive *//*responsive *//*responsive *//*responsive *//*responsive */
+/*responsive *//*responsive *//*responsive *//*responsive *//*responsive *//*responsive *//*responsive *//*responsive *//*responsive *//*responsive *//*responsive *//*responsive *//*responsive *//*responsive *//*responsive *//*responsive *//*responsive */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+@media only screen and (max-width:767px)
+
+
+
+
+
+
+
+
+{
+    .conteneur{
+        width: 100%;/*largeur de la boite */
+        height: 100%;/*hauteur de la boite de contenu .*/
+        padding-right: 15px;/*espace à la droite de l'element*/
+        padding-left: 15px;/*espace à la gauche de l'element*/
+        display: flex;
+        flex-direction: column;/*direction en colonne*/
+    }
+    footer{
+        display:flex;/*display inside , affichage interieur de l element */
+        flex-direction: column;/*direction en colonne*/
+        width: 112%;/*largeur de la boite */
+        height: auto;/*hauteur de la boite de contenu .*/
+        margin: 0px 0px 0px -15px;/* définit la taille des marges sur les quatre côtés de l'élément*/
+        order: 6;/*ordre de classement*/
+        margin-top: 470px;
+        
+    }
+    
+    .section-titre-3{
+        font-size: large;/*taille de la fonte*/
+    margin: 3px 0 6px 0px;/* définit la taille des marges sur les quatre côtés de l'élément*/
+
+    }
+
+
+    aside{
+        
+        width:112%;/*largeur de la boite */
+        height: 37em;/*hauteur de la boite de contenu .*/
+        margin: 0px 0px 0px -15px;/* définit la taille des marges sur les quatre côtés de l'élément*/
+        order: 3;/*ordre de classement*/
+        border-radius: 0px;/*coins arrondis*/
+    }
+
+
+    .btn-filtre{
+        margin: 7px 7px;/* définit la taille des marges sur les quatre côtés de l'élément*/
+    }
+
+
+    .carte-aside{
+        box-shadow: 0 0px 0px 0 rgba(0,0,0,0.2), 0 3px 12px 0 rgba(0,0,0,0.19);
+        width: 86%;/*largeur de la boite */
+    }
+
+
+    .navphone{
+        display: flex;/*display inside , affichage interieur de l element */
+        flex-direction: row;/*direction en ligne*/
+        width: 100%;/*largeur de la boite */
+        justify-content: space-between;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+@media only screen and (max-width:767px)
+
+
+
+
+
+
+{
+    .activités{
+        height: content-box;/*hauteur de la boite de contenu .*/
+        display: flex;/*display inside , affichage interieur de l element */
+        flex-direction: column;/*direction en colonne*/
+        order: 5;/*ordre de classement*/
+        margin-top: 70px;
+        margin-bottom:15px;
+
+       
+    }
+
+
+    .cartes-activités{
+        display: flex;/*display inside , affichage interieur de l element */
+        flex-direction: column;/*direction en colonne*/
+        grid-row-gap: 25px;
+        margin-top: 20px;/* définit la taille des marges sur les quatre côtés de l'élément*/
+        height: 200px;/*hauteur de la boite de contenu .*/
+        width: 100%;/*largeur de la boite */
+    }
+
+
+    .carte-activités{
+        height: 200px;
+        box-shadow: 0 0px 0px 0 rgba(0,0,0,0.2), 0 3px 12px 0 rgba(0,0,0,0.19);
+        margin:auto;/* définit la taille des marges sur les quatre côtés de l'élément*/
+        width: 100%;/*largeur de la boite */
+    }
+
+
+    .carte-activités a img{
+        height: 75%;/*hauteur de la boite de contenu .*/
+         object-fit:cover;
+    object-position: center; 
+    } 
+
+
+    .carte-3v2{
+        box-shadow: 0 0px 0px 0 rgba(0,0,0,0.2), 0 3px 12px 0 rgba(0,0,0,0.19);
+        margin: auto;/* définit la taille des marges sur les quatre côtés de l'élément*/
+        width: 100%;/*largeur de la boite */
+        height: 200px;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+@media only screen and (max-width:767px)
+
+
+
+
+
+
+
+{
+    .hébergements{
+        
+        height: content-box;/*hauteur de la boite de contenu .*/
+        display: flex;/*display inside , affichage interieur de l element */
+        flex-direction: column;/*direction en colonne*/
+        width: 100%;/*largeur de la boite */
+        background-color: #fff;/*couleur du fond d ecran */
+        order: 4;/*ordre de classement*/
+        margin-bottom: 250px;
+    }
+    .cartes{
+        display: flex;/*display inside , affichage interieur de l element */
+        flex-direction: column;/*direction en colonne*/
+        width: 100%;/*largeur de la boite */
+        grid-row-gap: 25px;
+        margin: 25px 10px 0 10px;/* définit la taille des marges sur les quatre côtés de l'élément*/
+       
+    }
+    .carte{
+        width: 100%;/*largeur de la boite */
+        margin: auto;/* définit la taille des marges sur les quatre côtés de l'élément*/
+        box-shadow: 0 0px 0px 0 rgba(0,0,0,0.2), 0 3px 12px 0 rgba(0,0,0,0.19);/*ombre sur la boite*/
+    }
+    .section-titre{
+        font-size: large;/*taille de la fonte*/
+    }
+    .hébergement_titre{
+       margin: 15px 0px -4px 0px;/* définit la taille des marges sur les quatre côtés de l'élément*/
+    }
+}
+
+
+
+
+
+
+
+
+
+
+@media only screen and (max-width:767px)
+
+
+
+
+
+
+{
+
+
+  nav{
+      
+      order: 1;/*ordre de classement*/
+      display: flex;/*display inside , affichage interieur de l element */
+      height: content-box;/*hauteur de la boite de contenu .*/
+      flex-wrap: wrap;/*Les éléments flexibles sont disposé sur plusieurs lignes. La ligne cross-start est équivalente à  start ou before en fonction de la valeur de flex-direction et la ligne cross-end est à l'opposée cross-start.
+*/
+  }
+  .logo{
+      width: 100px;/*largeur de la boite */
+      height: 40px;/*hauteur de la boite de contenu .*/
+      display: inline;
+  }
+  header{
+      
+      order: 2;/*ordre de classement*/
+      
+  }
+  .description{
+
+    height: content-box;/*hauteur de la boite de contenu .*/
+    line-height: 1.3;/*La propriété line-height définit la hauteur de la boîte d'une ligne.*/
+    margin-bottom: 22px;/*La propriété margin-bottom définit la marge basse */
+  }
+  .recherche img{
+      width: 22px;/*largeur de la boite */
+      padding: 12px;/*ecart de remplissage sur les 4 cotes de l element*/
+      border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+  }
+.filtre{
+    
+    margin: 0;/* définit la taille des marges sur les quatre côtés de l'élément*/
+    }
+
+.boutons{
+    display: flex;/*display inside , affichage interieur de l element */
+    flex-wrap: wrap;/*Les éléments flexibles sont disposé sur plusieurs lignes. La ligne cross-start est équivalente à  start ou before en fonction de la valeur de flex-direction et la ligne cross-end est à l'opposée cross-start.
+*/
+   
+    }
+.desc_1{
+    font-size: x-large;/*taille de la fonte*/
+    margin-top:20px;
+    }
+.desc_2{
+    font-size: 18px;/*taille de la fonte*/
+    }
+.contenu-footer{
+    width: content-box;/*largeur de la boite */
+    margin: 15px 0 15px 30px;/* définit la taille des marges sur les quatre côtés de l'élément*/
+    }
+.recherche-btn1{
+        display: none;/*ne genere pas de boite*/
+    }
+.recherche i{
+    display:inline;
+    background-color:  #0065FC;/*couleur du fond d ecran */
+    color: white;/*couleur */
+    outline: none;/*le contour*/
+    font-size: 17px;/*taille de la fonte*/
+    padding: 10px 10px 0px 15px;/*ecart de remplissage sur les 4 cotes de l element*/
+    border-radius:12px;/*coins arrondis*/
+    border:none;/*pas de bordure*/
+    width: 22px;/*largeur de la boite */
+    margin-left: -10px;/*La propriété margin-left définit la marge gauche */
+}    
+.sinscrire{
+    display: none;/*ne genere pas de boite*/
+}
+.sinscrire2{
+    display: inline;
+    padding-top: 18px;/*La propriété padding-top d'un élément ajuste la hauteur de la boîte de remplissage (padding) en haut de l'élément.*/
+    color:#1E90FF;/*couleur */
+    font-weight: 900;/*ecris en gras*/
+}
+.activités-btn{
+    border-bottom-color: #ddd;
+    border-bottom-style: solid;
+    width: 50%;/*largeur de la boite */
+    margin: 10px;/* définit la taille des marges sur les quatre côtés de l'élément*/
+    font-size: 14px;/*taille de la fonte*/
+    text-align: center;/*Les contenus en ligne (inline) sont horizontalement centrés par rapport à la boîte contenant la ligne.*/
+}
+.nav-bar{
+    margin: 0px -15px 0px -15px;/* définit la taille des marges sur les quatre côtés de l'élément*/
+    width: 107%;/*largeur de la boite */
+    justify-content: center;
+}
+.hébergements-btn{
+    border-bottom-color: #1E90FF;
+    border-bottom-style: solid;
+    border-top-style:none;
+    font-size: 14px;/*taille de la fonte*/
+    color: #1E90FF;  /*couleur */  
+    width: 50%;/*largeur de la boite */
+    text-align: center;/*Les contenus en ligne (inline) sont horizontalement centrés par rapport à la boîte contenant la ligne.*/
+}
+.nav-bar ul{
+    display: flex;/*display inside , affichage interieur de l element */
+    grid-row-gap: 18px;
+    flex-wrap: nowrap;/*Les éléments flexibles sont disposé sur plusieurs lignes. La ligne cross-start est équivalente à  start ou before en fonction de la valeur de flex-direction et la ligne cross-end est à l'opposée cross-start.
+*/
+    width: 100%;/*largeur de la boite */
+  
+}
+.nav-bar ul li{
+    margin: 24px -20px 0px 0px;/* définit la taille des marges sur les quatre côtés de l'élément*/
+    font-size: 15px;/*taille de la fonte*/
+}
+}
+
+
+
+
+
+
+
+
+
+
+@media only screen and (min-width: 768px) and (max-width: 1023px)
+
+
+
+
+
+
+{
+    .carte-hébergement{
+        padding: 8px 10px;/*ecart de remplissage sur les 4 cotes de l element*/
+    }
+    .hébergements{
+        height: 40em;/*hauteur de la boite de contenu .*/
+        order: 4;/*ordre de classement*/
+        width: 100%;/*largeur de la boite */
+    }
+    aside{
+    
+        height: 12em;/*hauteur de la boite de contenu .*/
+        order: 3;/*ordre de classement*/
+        width: 100%;/*largeur de la boite */
+        margin-bottom: 10px;/*La propriété margin-bottom définit la marge basse */
+    }
+    .cartes-aside{
+        display: flex;/*display inside , affichage interieur de l element */
+        flex-direction: row;/*direction en ligne*/
+    }
+    .titre-aside{
+    width: 93%;/*largeur de la boite */
+    }
+    .section-titre{
+        margin: 15px 0px 10px 20px ;/* définit la taille des marges sur les quatre côtés de l'élément*/
+       }
+  .aside-description {
+    padding: 0px 8px;/*ecart de remplissage sur les 4 cotes de l element*/
+    justify-content: space-around;
+    font-size: smaller;/*taille de la fonte*/
+  }
+  .cartes{
+      margin: 0px;/* définit la taille des marges sur les quatre côtés de l'élément*/
+      grid-row-gap: 13px;
+  }
+  .carte{
+        box-shadow: 1px 8px 6px -6px black;
+      }
+  
+  .carte-aside{
+    width: 30%;/*largeur de la boite */
+    height: 107px;/*hauteur de la boite de contenu .*/
+    margin: 5px 0px 10px 9px;/* définit la taille des marges sur les quatre côtés de l'élément*/
+    box-shadow: none;
+  }
+  .boutons{
+      display: flex;/*display inside , affichage interieur de l element */
+      flex-direction: row;/*direction en ligne*/
+      flex-wrap: wrap;/*Les éléments flexibles sont disposé sur plusieurs lignes. La ligne cross-start est équivalente à  start ou before en fonction de la valeur de flex-direction et la ligne cross-end est à l'opposée cross-start.
+*/
+  }
+  .activités-description{
+    padding: 2px 0px 0px 10px;/*ecart de remplissage sur les 4 cotes de l element*/
+    font-size: 88%;/*taille de la fonte*/
+  }
+.conteneur{
+    width: 100%;/*largeur de la boite */
+    height: 100%;/*hauteur de la boite de contenu .*/
+    padding-right: 15px;/*espace à la droite de l'element*/
+    padding-left: 15px;/*espace à la gauche de l'element*/
+    display: flex;/*display inside , affichage interieur de l element */
+    flex-direction: column; /*direction en colonne*/
+    }
+.activités{
+    order: 5;/*ordre de classement*/
+    height: 76vh;/*hauteur de la boite de contenu .*/
+}
+footer{
+    order: 6;/*ordre de classement*/
+    margin-bottom: 0px;/*La propriété margin-bottom définit la marge basse */
+    margin-left: -15px;/*La propriété margin-left définit la marge gauche */
+    width: 104%;/*largeur de la boite */
+}
+.contenu-footer{
+    margin: 14px 25px;/* définit la taille des marges sur les quatre côtés de l'élément*/
+}
+.section-titre{
+    margin:15px 0 20px 20px;/* définit la taille des marges sur les quatre côtés de l'élément*/
+    font-weight: 700;/*ecris en gras*/
+}    
+.description{
+    height: content-box;/*hauteur de la boite de contenu .*/
+    line-height: 1.3;/*La propriété line-height définit la hauteur de la boîte d'une ligne.*/
+    margin-bottom: 22px;/*La propriété margin-bottom définit la marge basse */
+}
+}
+
+
+
+
+
+
+
+
+
+@media only screen and (min-width: 992px)/*(max-width:1023)*/
+
+
+
+
+
+
+{
+    .carte-hébergement{
+        padding: 5px 7px;/*ecart de remplissage sur les 4 cotes de l element*/
+
+    }  
+    aside{
+        height: 20vh;/*hauteur de la boite de contenu .*/
+    }
+    .hébergements{
+        height: 55vh;/*hauteur de la boite de contenu .*/
+    }
+}
+
+
+
+
+
+
+
+
+
+@media only screen and (min-width: 1024px)
+
+
+
+
+
+
+{
+    .carte-hébergement{
+        padding: 7px 10px;/*ecart de remplissage sur les 4 cotes de l element*/
+    }
+    .hébergements{
+        height: 37em;/*hauteur de la boite de contenu .*/
+    }
+    .aside-description{
+        padding: 7px 6px;/*ecart de remplissage sur les 4 cotes de l element*/
+    }
+    aside{
+        height: 37em;/*hauteur de la boite de contenu .*/
+    }
+}
