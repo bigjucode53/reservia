@@ -656,7 +656,7 @@ header{
         flex-direction: column;/*direction en colonne*/
         width: 100%;/*largeur de la boite */
         grid-row-gap: 25px;
-        margin: 25px 10px 0 10px;/* définit la taille des marges sur les quatre côtés de l'élément*/
+        margin: auto;/* définit la taille des marges sur les quatre côtés de l'élément*/
        
     }
     .carte{
