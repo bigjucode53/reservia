@@ -548,6 +548,7 @@ header{
     .carte-aside{
         box-shadow: 0 0px 0px 0 rgba(0,0,0,0.2), 0 3px 12px 0 rgba(0,0,0,0.19);
         width: 86%;/*largeur de la boite */
+        margin-left: 15px;
     }
 
 
